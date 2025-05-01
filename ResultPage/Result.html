@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <title>Document</title>
+</head>
+<body>
+  <div class="Main">
+    <section class="section-1">
+        <img>
+    </section>
+    <section class="section-2" id="s2">
+     <h2> </h2>
+     <p class="Para"></p>
+     <div class="inner-Div">
+      <p></p>
+      <p></p>
+     </div>
+    </section>
+  </div>
+  
+  <canvas id="confetti-canvas" style="position:fixed; top:0; left:0; pointer-events:none; z-index:999"></canvas>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+<script>
+  window.onload = function () {
+    var fullName = localStorage.getItem("fullName") || "Student";
+    fullName = fullName.split(" ").map(function(word) {
+    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    }).join(" ");
+    var Score = parseInt(localStorage.getItem("quizScore")) || 0;
+    var TQ = parseInt(localStorage.getItem("totalQuestions")) ;
+    var status = localStorage.getItem("status");
+    var scorePercentage =  Math.round((Score/TQ)*100);
+
+    var section2 = document.getElementById("s2")
+    var title = document.querySelector("h2");
+    var message = document.querySelector(".Para");
+    var gradeBox = document.querySelector(".inner-Div");
+    var image = document.querySelector("section.section-1 img");
+
+    if (status === "timeout") {
+      title.innerHTML = '<i class="fa-solid fa-circle-exclamation" style="color: red;"></i> Time\'s Up ' + fullName + '!';
+      message.innerHTML = "Unfortunately, the allocated time for this exam has expired before your submission was recorded.<br>As a result, your attempt could not be evaluated.<br>Please contact your instructor or administrator for further assistance.";
+      message.style.fontSize = "23px";
+      image.src = "Assets/Images/Timeout.jpg"; 
+      image.style.width = "600px";
+      image.style.height = "430px";
+      var body = document.body;
+      body.animate([
+        { boxShadow: '0 0 0px rgba(255, 0, 0, 0)' },
+        { boxShadow: '0 0 20px rgba(255, 0, 0, 0.5)' },
+        { boxShadow: '0 0 0px rgba(255, 0, 0, 0)' }
+   ], {
+     duration: 2000,
+     iterations: Infinity
+   });
+    gradeBox.style.height = "85px"
+    
+    } else if (scorePercentage >= 60) {
+      title.innerHTML = '<i class="fa-solid fa-circle-check" style="color: #0000ff;"></i> Congratulations ' + fullName + '!';
+      message.innerHTML = "Well done! Your submission has been successfully received and evaluated.<br>You have achieved a passing score — congratulations on your accomplishment!<br>Keep up the great work and continue striving for excellence in your learning journey.";
+      image.src = "Assets/Images/Success.avif";
+      confetti({
+       particleCount: 100,
+       spread: 70,
+       origin: { y: 0.6 }
+    });
+    gradeBox.innerHTML = '<p>Your Total Score: ' + scorePercentage + '%</p>';
+    message.style.fontSize = "20px";
+    } else {
+      title.innerHTML = '<i class="fa-solid fa-circle-xmark" style="color: red;"></i> HardLuck ' + fullName + '!';
+      message.innerHTML = "Your exam has been submitted successfully, but your score did not meet the required passing threshold.<br>We encourage you to review the material and try again when you're ready.<br>Keep striving—you’re on the right path!";
+      image.src = "Assets/Images/Fail.jpg"; 
+      image.style.width = "600px";
+      image.style.height = "430px";
+      message.style.fontSize = "22px";
+      gradeBox.innerHTML = '<p>Your Grade: ' + scorePercentage + '%</p>';
+      var body = document.body;
+      body.animate([
+        { boxShadow: '0 0 0px rgba(255, 0, 0, 0)' },
+        { boxShadow: '0 0 20px rgba(255, 0, 0, 0.5)' },
+        { boxShadow: '0 0 0px rgba(255, 0, 0, 0)' }
+   ], {
+     duration: 2000,
+     iterations: Infinity
+   });
+    }
+
+    var examDate = localStorage.getItem("examDate") || "27/4/2025";
+    gradeBox.innerHTML += '<p>Examination Date: ' + examDate + '</p>';
+  };
+</script>
+  
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"></script>
+</body>
+</html>

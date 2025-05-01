@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Examination Form</title>
+  </head>
+  <body>
+    <section class="left">
+      <div class="exam-form">
+        <div class="question-bar">
+          <p>
+            <span id="questionNumber">Q1. </span>
+            <span id="questionText">Loading question...</span>
+          </p>
+          <div class="mark-question">
+            <img src="/ExamPage/assets/svg/flag-regular 1.svg" />
+          </div>
+        </div>
+        <p>Please choose ONE of the following answers</p>
+        <div class="radio-group">
+          <label class="custom-radio">
+            <span class="radio-text" id="option1">Option 1</span>
+            <input type="radio" name="option" />
+            <span class="checkmark"></span>
+          </label>
+
+          <label class="custom-radio">
+            <span class="radio-text" id="option2">Option 2</span>
+            <input type="radio" name="option" />
+            <span class="checkmark"></span>
+          </label>
+
+          <label class="custom-radio">
+            <span class="radio-text" id="option3">Option 3</span>
+            <input type="radio" name="option" />
+            <span class="checkmark"></span>
+          </label>
+
+          <label class="custom-radio">
+            <span class="radio-text" id="option4">Option 4</span>
+            <input type="radio" name="option" />
+            <span class="checkmark"></span>
+          </label>
+        </div>
+      </div>
+      <div class="bot">
+        <button class="submit-button">Submit</button>
+        <div class="pagination">
+          <button class="nav-button">
+            <img src="/ExamPage/assets/svg/left_arrow.svg" alt="Previous" />
+          </button>
+          <div class="page-number" id="pageNumber">1/5</div>
+          <button class="nav-button">
+            <img src="/ExamPage/assets/svg/right_arrow.svg" alt="Next" />
+          </button>
+        </div>
+
+        <div class="timer">
+          <div class="timer-text">Time Left</div>
+          <div class="time-left">00:00</div>
+        </div>
+      </div>
+    </section>
+    <section class="right">
+      <p>MARKED QUESTIONS</p>
+      <div class="marked-questions">
+      </div>
+    </section>
+    <div class="modal-overlay" id="submitModal">
+      <div class="modal-content">
+        <h2>Submit Exam</h2>
+        <p>Are you sure you want to submit your answers?</p>
+        <div class="modal-buttons">
+          <button id="confirmSubmit">Submit</button>
+          <button id="cancelSubmit">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <script src="/ExamPage/script.js"></script>
+  </body>
+</html>

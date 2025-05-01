@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="MainDiv">
+      <section class="section-2">
+        <div class="internal-div-1">
+          <h1>Sign Up</h1>
+          <hr />
+        </div>
+        <form onsubmit="validation(event)">
+          <div class="internal-div-2">
+            <div class="form-group">
+              <span></span>
+              <input
+                id="FN"
+                type="text"
+                name="FirstName"
+                placeholder="Enter First Name"
+              />
+            </div>
+            <div class="form-group">
+              <span></span>
+              <input
+                id="LN"
+                type="text"
+                name="LastName"
+                placeholder="Enter Last Name"
+              />
+            </div>
+          </div>
+          <div class="form-group-2">
+            <span></span>
+            <input
+              id="email"
+              type="text"
+              name="Email"
+              placeholder="Enter Email"
+            />
+          </div>
+          <div class="form-group-2">
+            <span></span>
+            <input
+              id="password"
+              type="password"
+              name="password"
+              placeholder="Enter Password"
+            />
+          </div>
+          <div class="form-group-2">
+            <span></span>
+            <input
+              id="RP"
+              type="password"
+              name="Re-enter password"
+              placeholder="Confirm Password"
+            />
+          </div>
+          <input id="S-btn" type="submit" value="Sign up" />
+        </form>
+      </section>
+      <section class="section-1">
+        <h2>New Here?</h2>
+        <p>
+          Create your account to access online exams, track your progress, and
+          get instant results. Registration is quick and easy!
+        </p>
+        <ul>
+          <li>✔ Access upcoming exams</li>
+          <li>✔ Save your progress</li>
+          <li>✔ View results and feedback</li>
+        </ul>
+      </section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
