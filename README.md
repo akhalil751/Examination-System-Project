@@ -51,3 +51,26 @@ A complete browser-based examination system built with **HTML, CSS, and JavaScri
 - **LocalStorage API** – Persisting user data and answers  
 
 ---
+
+## 📸 Screenshots
+
+### Login Page
+![Login Page](/screenshots/login_page.png)
+
+### Registration Page
+![Registration Page](/screenshots/register_page.png)
+
+### Exam Interface
+![Exam Page](/screenshots/exam_form.png)
+
+### Confirm Submission
+![Confirm Submission](/screenshots/confirm_submission.png)
+
+### Timeout Page
+![Timeout Page](/screenshots/timeout.png)
+
+### Result - Pass
+![Pass Result](/screenshots/exam_passed.png)
+
+### Result - Fail
+![Fail Result](/screenshots/exam_failed.png)
